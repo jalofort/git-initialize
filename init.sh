@@ -32,7 +32,11 @@ eval "$(ssh-agent -s)"
 
 # Add the SSH key to the ssh-agent
 echo "Adding SSH key to ssh-agent..."
-ssh-add ~/.ssh/id_ed25519_github
+sudo ssh-add ~/.ssh/id_ed25519_github
+
+# Copy ssh config file
+echo "Copying ssh config file..."
+cp ssh_config ~/.ssh/config
 
 # Display the SSH key
 echo "Here is your SSH public key:"
