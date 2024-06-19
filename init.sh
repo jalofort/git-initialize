@@ -29,13 +29,6 @@ read -p "Enter your GitHub email address: " email
 echo "Generating SSH key..."
 ssh-keygen -t ed25519 -C "$email" -f ~/.ssh/id_ed25519_github -N ""
 
-# Start the ssh-agent in the background
-# Add the SSH key to the ssh-agent
-echo "Starting ssh-agent..."
-echo "Adding SSH key to ssh-agent..."
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519_github
-
 # Copy ssh config file
 echo "Copying ssh config file..."
 cp ssh_config ~/.ssh/config
