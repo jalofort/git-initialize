@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# set Asia/Riyadh timezone
+sudo timedatectl set-timezone Asia/Riyadh
+
 # Update the package list
 echo "Updating package list..."
 sudo apt update
