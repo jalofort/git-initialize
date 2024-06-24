@@ -37,6 +37,13 @@ cp ssh_config ~/.ssh/config
 echo "Here is your SSH public key:"
 cat ~/.ssh/id_ed25519_github.pub
 
+# Start the ssh-agent in the background
+# Add the SSH key to the ssh-agent
+echo "Starting ssh-agent..."
+echo "Adding SSH key to ssh-agent..."
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_github
+
 # Instructions to add the key to GitHub
 echo ""
 echo "Copy the above SSH key and add it to your GitHub account by following these steps:"
